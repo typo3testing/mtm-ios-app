@@ -1,0 +1,81 @@
+// fonts
+$primary-font: 'triester_sansregular';
+
+$primary-font-outline: 'triester_sans_outlineregular';
+
+$secondary-font: 'axisextra_bold';
+
+$site-third-font: 'Open Sans', sans-serif;
+$site-third-font-light: 300;
+$site-third-font-regular: 400;
+$site-third-font-bold: 700;
+
+$site-forth-font-regular: 'helveticaneueregular';
+$site-forth-font-bold: 'helveticaneuebold';
+
+
+
+
+
+
+
+
+
+
+// colors
+$site-white-type-two: #FF0000;
+$site-dark-color: #121217;
+$site-dark-color-type-two: #29292E;
+$site-dark-color-type-three: #33333B;
+$site-dark-color-type-three-dark: #2b2b31;
+$site-dark-color-type-four: #797979;
+$site-dark-color-type-five: #35353A;
+$site-danger-color: #DE0000;
+$site-light-danger-color: #FF0000;
+$site-pretty-color: #DB7683;
+$site-copper-color: #890013;
+$site-Darkcopper-color: #960000;
+$site-success-color: #2F4AB9;
+$site-Lightsuccess-color: #6EA2CE;
+$site-Darksuccess-color: #4618C3;
+$site-grey-color: #9D9999;
+$site-greyTypeTwo-color: #E2E2E2;
+$site-cool-color: #58DFFF;
+$site-Lightcool-color: #BADFFF;
+$site-warn-color: #DEA200;
+$site-success-color-type-two: #12C486;
+
+
+
+// grid
+
+$custom-grid-gutter-width: 14px;
+
+$default-left-right-padding: 14px;
+
+$larger-left-right-padding: 25px;
+
+$larger-top-bottom-padding: 25px;
+
+$less-left-right-padding: 30px;
+
+$normal-top-bottom-padding: 35px;
+
+$normal-grid-varient: 30px;
+
+$lg-grid-varient: 14px;
+
+$max-lg-grid-varient: 14px;
+
+$extreme-grid-varient: 14px;
+
+$tiny-grid-varient: 14px;
+
+$custom-container-width-default: 1310px + $custom-grid-gutter-width;
+
+$custom-container-width-normalDesktop: 1140px + $custom-grid-gutter-width;
+
+$custom-container-width-tiny: 940px + $custom-grid-gutter-width;
+
+$custom-container-width-smallDesktop-or-tabletLandscape: 970px + $custom-grid-gutter-width;
+

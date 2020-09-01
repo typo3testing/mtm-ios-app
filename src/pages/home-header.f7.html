@@ -1,0 +1,59 @@
+<template>
+  <div class="page" data-name="home-header">
+    {{> 'homeHeader'}}
+  </div>
+</template>
+
+<template-partial id="homeHeader">
+  <div class="navbar navbar-large fake-nav-bar"></div>
+  <header class="header">
+    <div class="main-wrap block-section default-left-right-padding clearfix">
+      <div class="row">
+        <!-- logo -->
+        <div class="col-xs-6 my-col no-top-margin clearfix">
+            <div class="logo-block main-wrap clearfix">
+                <a href="/" data-force="true"><img src="static/images/MT-Logo_white@2x.png"></a>
+            </div>
+        </div>
+        <!-- logo -->
+        <!-- menu hamberg -->
+        <div class="col-xs-6 my-col no-top-margin clearfix">
+            <div class="menu-wrap clearfix">
+                <div class="main-menu clearfix">
+                    <div class="menu-hamberg"></div>
+                </div>
+            </div>
+        </div>
+        <!-- menu hamberg -->
+      </div>
+    </div>
+    <div class="app-mega-menu animated slideOutRight clearfix">
+      <div class="main-holder">
+        <!-- menu  -->
+        <div class="menu-part user-menu">
+          <ul>
+            <li class="login"><a href="/anmeldung/" data-force="true"><span>ANMELDUNG</span></a></li>
+            <li class="hidden"><a href="/mein-profil/" data-force="true"><span>MEIN PROFIL</span></a></li>
+            <li class="cart-menu"><a href="/warenkorb/" data-force="true"><span>WARENKORB</span><i class="cart_no">0</i></a></li>
+            <li class="hidden"><a href="/meine-bestellungen/" data-force="true"><span>MEINE BESTELLUNGEN</span></a></li>
+            <li class="hidden logout"><a href="/ausloggen/" data-force="true"><span>AUSLOGGEN</span></a></li>
+          </ul>
+        </div>
+        <div class="menu-part type-two">
+          <ul>
+            <li><a href="/kontakt/" data-force="true"><span>KONTAKT</span></a></li>
+            <li><a href="http://p551477.webspaceconfig.de/" class="link external" target="_system"><span>MT WEBSITE</span></a></li>
+            <li><a href="/hilfe/" data-force="true"><span>HILFE</span></a></li>
+            <li><a href="/datenschutz/" data-force="true"><span>DATENSCHUTZ</span></a></li>
+            <li><a href="/impressum/" data-force="true"><span>IMPRESSUM</span></a></li>
+          </ul>
+        </div>
+        <!-- menu  -->
+      </div>
+    </div>
+  </header>
+</template-partial>
+
+<script>
+export default {};
+</script>

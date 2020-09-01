@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "571872653359",
+    "firebase_url": "https://mt-melsungen-1678c.firebaseio.com",
+    "project_id": "mt-melsungen-1678c",
+    "storage_bucket": "mt-melsungen-1678c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:571872653359:android:02d5346ce084e1de2716da",
+        "android_client_info": {
+          "package_name": "io.framework7.mtmelsungen"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "571872653359-0lba1i9duq5pc7qpgv7enob6cvp2qjrv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAXKLn6IbTLcZgnXIL07p5EeHWKGbVlLeA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "571872653359-0lba1i9duq5pc7qpgv7enob6cvp2qjrv.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "571872653359-grf2mot2pt4gtlk2brtac49e3s3p3mn4.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "io.framework7.mtmelsungen"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

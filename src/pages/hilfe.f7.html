@@ -1,0 +1,30 @@
+<template>
+  <div class="page has-no-top-banner" data-name="hilfe">
+    {{> 'subpageHeader'}}
+
+    <!-- Page content-->
+    <div class="page-content" id="hilfe-content"></div>
+  </div>
+</template>
+
+<script>
+
+import $$ from 'dom7';
+import localforage from "localforage";
+import MtmApi from '../js/mtm-api.js';
+import MtmHilfeContent from '../js/content/mtm-hilfe.js';
+
+export default {
+  on: {
+      pageAfterIn: function(e, page) {
+          this.$f7ready((f7) => {
+            MtmApi.apiUrl().done(function(config){
+                  MtmHilfeContent.contentPageAfterIn(f7,config);
+            });
+
+          });
+      },
+  },
+};
+
+</script>

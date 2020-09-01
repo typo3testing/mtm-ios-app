@@ -1,0 +1,56 @@
+<template>
+  <div class="page has-no-top-banner" data-name="meine-bestellungen">
+    {{> 'subpageHeader'}}
+
+    <!-- Page content-->
+    
+   
+    <!-- Scrollable page content-->
+      <div class="page-content page-bottom-gap-type-one">
+        <!-- anmelden module  -->
+             <div class="element element-gap-Exlarge-max block-section centered-container clearfix">
+                <div class="container container-width-default clearfix">
+                    
+                      
+                     <!-- module header -->
+                         <div class="element element-gap-normal block-section clearfix">
+                            <div class="module-header pull-text-left light clearfix">
+                                 <h3>Hallo,</br> <h id="user-fname"></h> <h id="user-lname"></h><span>Meine Bestellungen</span></h3>
+                             </div>
+                        </div>
+                    <!-- module header -->
+
+
+                    <!-- profile ubershit module -->
+                    <div class="anmelden-module lg-grid-varient clearfix" id="myorder">
+                      
+                    </div>
+                    <!-- profile ubershit module -->
+
+
+
+                </div>
+            </div>
+           <!-- anmelden module  -->
+      </div>
+      <!-- Scrollable page content-->
+  </div>
+</template>
+
+<script>
+import $$ from 'dom7';
+import localforage from "localforage";
+import MtmApi from '../js/mtm-api.js';
+import Mtmbestellungencontent from '../js/content/mtm-bestellungen.js';
+export default {
+    on: {
+        pageAfterIn: function(e, page) {
+            this.$f7ready((f7) => {
+              MtmApi.apiUrl().done(function(config){
+                  Mtmbestellungencontent.contentPageAfterIn(f7,config);
+              });
+            });
+        },
+    },
+}
+</script>

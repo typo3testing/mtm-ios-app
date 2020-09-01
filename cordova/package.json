@@ -1,0 +1,55 @@
+{
+  "name": "io.framework7.mtmelsungen",
+  "displayName": "MT Melsungen",
+  "version": "1.0.0",
+  "description": "A sample Apache Cordova application that responds to the deviceready event.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ecosystem:cordova"
+  ],
+  "author": "Apache Cordova Team",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "cordova-android": "^8.1.0",
+    "cordova-ios": "^5.1.1",
+    "cordova-plugin-androidx": "^2.0.0",
+    "cordova-plugin-androidx-adapter": "^1.1.1",
+    "cordova-plugin-customurlscheme": "^5.0.2",
+    "cordova-plugin-firebase-lib": "^5.1.1",
+    "cordova-plugin-inappbrowser": "^4.0.0",
+    "cordova-plugin-keyboard": "^1.2.0",
+    "cordova-plugin-splashscreen": "^5.0.4",
+    "cordova-plugin-statusbar": "^2.4.3",
+    "cordova-plugin-whitelist": "^1.3.4",
+    "cordova-plugin-wkwebview-engine": "^1.2.1",
+    "cordova-plugin-wkwebview-file-xhr": "^2.1.4"
+  },
+  "cordova": {
+    "plugins": {
+      "cordova-plugin-keyboard": {},
+      "cordova-plugin-splashscreen": {},
+      "cordova-plugin-statusbar": {},
+      "cordova-plugin-whitelist": {},
+      "cordova-plugin-wkwebview-engine": {},
+      "cordova-plugin-wkwebview-file-xhr": {},
+      "cordova-plugin-firebase-lib": {},
+      "cordova-plugin-androidx": {},
+      "cordova-plugin-androidx-adapter": {},
+      "cordova-plugin-inappbrowser": {},
+      "cordova-plugin-customurlscheme": {
+        "URL_SCHEME": "mtmelsungen",
+        "ANDROID_SCHEME": " ",
+        "ANDROID_HOST": " ",
+        "ANDROID_PATHPREFIX": "/"
+      }
+    },
+    "platforms": [
+      "android",
+      "ios"
+    ]
+  },
+  "devDependencies": {}
+}

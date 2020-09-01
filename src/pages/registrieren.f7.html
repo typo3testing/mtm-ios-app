@@ -1,0 +1,416 @@
+<template>
+<div class="page has-no-top-banner" data-name="registrieren">
+    {{> 'subpageHeader'}}
+
+    <!-- Scrollable page content-->
+    <div class="page-content page-bottom-gap-type-one">
+        <div class="container-fluid">
+        
+            <!-- logo -->
+            <div class="pull-text-center element element-gap-Lessnormal">
+              <img src="static/images/MT-Logo_white.png" width="116" class="inline-block">
+            </div>
+            <!-- logo -->
+
+            <!-- login box -->
+            <div class="login-box element element-gap-Lgnormal">
+
+                <!-- module header -->
+                <div class="element element-gap-normal block-section clearfix">
+                   <div class="module-header pull-text-center clearfix">
+                        <h2><span>Neues Fanprofil erstellen</span></h2>
+                    </div>
+                </div>
+                <!-- module header -->
+
+                <!-- form -->
+                <!-- registration form module -->
+                <form id="registrationform">
+                    <div class="registration-form-module clearfix">
+                        <div class="site-form type-one clearfix">
+
+                            <!-- form row -->
+                            <div class="row form-row element element-gap-bigger clearfix">
+
+                                <div class="col-md-12 my-col one-col"><div class="filed-group-title">E-Mail UND Passwort</div></div>
+                                                    
+                                <!-- col -->
+                                <div class="form-col col-md-6 my-col">
+                                    <div class="form-field">
+                                        <div class="alert bg-danger required-error" style="display: none;">
+                                            <button type="button" class="close" data-dismiss="alert">×</button>
+                                            <h4>Error</h4>
+                                            Feld E-Mail ist erforderlich
+                                            <br>
+                                        </div>
+                                        <div class="alert bg-danger format-error" style="display: none;">
+                                            <button type="button" class="close" data-dismiss="alert">×</button>
+                                            <h4>Error</h4>
+                                            Bitte überprüfen Sie das E-Mail-Format
+                                            <br>
+                                        </div>
+                                        <div class="field-wrap">
+                                            <input type="email" class="text-input required" id="email" name="email" placeholder="E-MAIL">
+                                            <span class="input-clear-button"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- col -->
+                                <!-- col -->
+                                <div class="form-col col-md-6 my-col">
+                                    <div class="form-field">
+                                        <div class="alert bg-danger required-error" style="display: none;">
+                                            <button type="button" class="close" data-dismiss="alert">×</button>
+                                            <h4>Error</h4>
+                                            Feld Passwort ist erforderlich
+                                            <br>
+                                        </div>
+                                        <div class="alert bg-danger length-error" style="display: none;">
+                                            <button type="button" class="close" data-dismiss="alert">×</button>
+                                            <h4>Error</h4>
+                                            Das Passwort muss aus mindestens 8 Zeichen bestehen
+                                            <br>
+                                        </div>
+                                        <div class="field-wrap">
+                                            <input type="password" class="text-input required" name="password" id="password" placeholder="PASSWORT" min="8">
+                                            <span class="input-clear-button"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- col -->
+                                <div class="col-md-12 my-col element element-gap-medium"></div> 
+                                <!-- col -->
+                                <div class="col-md-12 my-col one-col"><div class="filed-group-title">adresseDATEN</div></div>
+                                <!-- col -->
+                                <!-- col -->
+                                <div class="form-col col-md-6 my-col two-col">
+                                    <div class="form-field">
+                                        <div class="alert bg-danger required-error" style="display: none;">
+                                            <button type="button" class="close" data-dismiss="alert">×</button>
+                                            <h4>Error</h4>
+                                            Feld Geschlecht ist erforderlich
+                                            <br>
+                                        </div>
+                                        <div class="field select-field outlined dark">
+                                            <select id="gration" name="gration" class="required">
+                                                <option value>GESCHLECHT</option>
+                                                <option value="0">Frau</option>
+                                                <option value="1">Herr</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- col -->
+                                <div class="clear"></div>
+                                <!-- col -->
+                                <div class="form-col col-md-6 my-col two-col">
+                                    <div class="form-field">
+                                        <div class="alert bg-danger required-error" style="display: none;">
+                                            <button type="button" class="close" data-dismiss="alert">×</button>
+                                            <h4>Error</h4>
+                                            Feld Vorname ist erforderlich
+                                            <br>
+                                        </div>
+                                        <div class="field-wrap">
+                                            <input type="text" class="text-input required" name="fname" id="fname" placeholder="VORNAME">
+                                            <span class="input-clear-button"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- col -->
+                                <!-- col -->
+                                <div class="form-col col-md-6 my-col two-col">
+                                    <div class="form-field">
+                                        <div class="alert bg-danger required-error" style="display: none;">
+                                            <button type="button" class="close" data-dismiss="alert">×</button>
+                                            <h4>Error</h4>
+                                            Feld Nachname ist erforderlich
+                                            <br>
+                                        </div>
+                                        <div class="field-wrap">
+                                            <input type="text" class="text-input required" id="lastname" name="lastname" placeholder="NACHNAME">
+                                            <span class="input-clear-button"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- col -->
+                                <!-- col -->
+                                <div class="form-col col-md-12 my-col one-col">
+                                    <div class="form-field">
+                                        <input type="text" class="text-input" id="firma" name="firma" placeholder="FIRMA (OPTIONAL)">
+                                        <span class="input-clear-button"></span>
+                                    </div>
+                                </div>
+                                <!-- col -->
+                                <!-- col -->
+                                <div class="form-col col-md-6 my-col two-col">
+                                    <div class="form-field">
+                                        <div class="alert bg-danger required-error" style="display: none;">
+                                            <button type="button" class="close" data-dismiss="alert">×</button>
+                                            <h4>Error</h4>
+                                            Feld Straße ist erforderlich
+                                            <br>
+                                        </div>
+                                        <div class="field-wrap">
+                                            <input type="text" class="text-input required" id="strabe" name="strabe" placeholder="STRAßE">
+                                            <span class="input-clear-button"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- col -->
+                                <!-- col -->
+                                <div class="form-col col-md-6 my-col two-col">
+                                    <div class="form-field">
+                                        <div class="alert bg-danger required-error" style="display: none;">
+                                            <button type="button" class="close" data-dismiss="alert">×</button>
+                                            <h4>Error</h4>
+                                            Feld Haus-NR. ist erforderlich
+                                            <br>
+                                        </div>
+                                        <div class="field-wrap">
+                                            <input type="text" class="text-input required" id="houseno" name="houseno" placeholder="HAUS-NR.">
+                                            <span class="input-clear-button"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- col -->
+                                <!-- col -->
+                                <div class="form-col col-md-12 my-col one-col">
+                                    <div class="form-field">
+                                        <input type="text" class="text-input" id="additive" name="additive" placeholder="ZUSATZ (OPTIONAL)">
+                                        <span class="input-clear-button"></span>
+                                    </div>
+                                </div>
+                                <!-- col -->
+                                <!-- col -->
+                                <div class="form-col col-md-6 my-col two-col">
+                                    <div class="form-field">
+                                        <div class="alert bg-danger required-error" style="display: none;">
+                                            <button type="button" class="close" data-dismiss="alert">×</button>
+                                            <h4>Error</h4>
+                                            Feld PLZ ist erforderlich
+                                            <br>
+                                        </div>
+                                        <div class="field-wrap">
+                                            <input type="text" class="text-input required" id="plz" name="plz" placeholder="PLZ">
+                                            <span class="input-clear-button"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- col -->
+                                <!-- col -->
+                                <div class="form-col col-md-6 my-col two-col">
+                                    <div class="form-field">
+                                        <div class="alert bg-danger required-error" style="display: none;">
+                                            <button type="button" class="close" data-dismiss="alert">×</button>
+                                            <h4>Error</h4>
+                                            Feld ORT ist erforderlich
+                                            <br>
+                                        </div>
+                                        <div class="field-wrap">
+                                            <input type="text" class="text-input required" id="ort" name="ort" placeholder="ORT">
+                                            <span class="input-clear-button"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- col -->
+                                <!-- col -->
+                                <div class="form-col col-md-6 my-col two-col">
+                                    <div class="form-field">
+                                        <div class="alert bg-danger required-error" style="display: none;">
+                                            <button type="button" class="close" data-dismiss="alert">×</button>
+                                            <h4>Error</h4>
+                                            Feld Land ist erforderlich
+                                            <br>
+                                        </div>
+                                        <div class="field select-field outlined dark">
+                                            <select id="land" name="land" class="required">
+                                                
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- col -->
+                                <div class="clear"></div>
+                                <!-- col -->
+                                <div class="form-col col-md-12 my-col one-col">
+                                    <div class="form-field">
+                                        <div class="alert bg-danger required-error" style="display: none;">
+                                            <button type="button" class="close" data-dismiss="alert">×</button>
+                                            <h4>Error</h4>
+                                            Feld Telefon ist erforderlich
+                                            <br>
+                                        </div>
+                                        <div class="field-wrap">
+                                            <input type="text" class="text-input required" id="tel" name="tel" placeholder="TELEFON">
+                                            <span class="input-clear-button"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- col -->
+                                <!-- col -->
+                                <div class="col-md-12 my-col one-col">
+                                    <div class="form-field">
+                                        <div class="custom-check element element-gap-tiny">
+                                            <div class="alert bg-danger required-error" style="display: none;">
+                                                <button type="button" class="close" data-dismiss="alert">×</button>
+                                                <h4>Error</h4>
+                                                Feld Terms ist erforderlich
+                                                <br>
+                                            </div>
+                                            <div class="check-block">
+                                                <input type="checkbox" class="required" id="lorem" name="lorem">
+                                                <div class="clone-check"><i class="fa fa-check"></i></div>
+                                            </div>
+                                            <label for="lorem" class="entry">Ich habe die <a href="/impressum/">AGB</a> und <a href="/datenschutz/">Datenschutz</a> gelesen und stimme diesen zu.</label>
+                                        </div>
+                                        <div class="custom-check">
+                                            <div class="check-block">
+                                                <input type="checkbox" id="lorem1" name="lorem1">
+                                                <div class="clone-check"><i class="fa fa-check"></i></div>
+                                            </div>
+                                            <label for="lorem1" class="entry">Abweichende Lieferadressen für Shop Bestellungen</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- col -->
+                                <div class="col-md-12 my-col element element-gap-medium"></div>
+                                <div class="col-md-12 my-col"><div class="filed-group-title">Lieferadresse</div></div>
+                                <!-- col -->
+                                <div class="form-col col-md-6 my-col two-col">
+                                    <div class="form-field">
+                                        <div class="field select-field outlined dark">
+                                            <select id="sgration" name="sgration">
+                                             <option>GESCHLECHT</option>
+                                              <option value="0">Frau</option>
+                                            <option value="1">Herr</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- col -->
+                                <div class="clear"></div>
+                                <!-- col -->
+                                <div class="form-col col-md-6 my-col two-col">
+                                    <div class="form-field">
+                                        <input type="text" class="text-input" id="sfname" name="sfname" placeholder="VORNAME">
+                                        <span class="input-clear-button"></span>
+                                    </div>
+                                </div>
+                                <!-- col -->
+                                <!-- col -->
+                                <div class="form-col col-md-6 my-col two-col">
+                                    <div class="form-field">
+                                        <input type="text" class="text-input" id="slname" name="slname" placeholder="NACHNAME">
+                                        <span class="input-clear-button"></span>
+                                    </div>
+                                </div>
+                                <!-- col -->
+                                <!-- col -->
+                                <div class="form-col col-md-12 my-col one-col">
+                                    <div class="form-field">
+                                        <input type="text" class="text-input" id="sfirma" name="sfirma" placeholder="FIRMA (OPTIONAL)">
+                                        <span class="input-clear-button"></span>
+                                    </div>
+                                </div>
+                                <!-- col -->
+                                <!-- col -->
+                                <div class="form-col col-md-6 my-col two-col">
+                                    <div class="form-field">
+                                        <input type="text" class="text-input" id="sstrabe" name="sstrabe" placeholder="STRAßE">
+                                        <span class="input-clear-button"></span>
+                                    </div>
+                                </div>
+                                <!-- col -->
+                                <!-- col -->
+                                <div class="form-col col-md-6 my-col two-col">
+                                    <div class="form-field">
+                                        <input type="text" class="text-input" id="shouseno" name="shouseno" placeholder="HAUS-NR.">
+                                        <span class="input-clear-button"></span>
+                                    </div>
+                                </div>
+                                <!-- col -->
+                                <!-- col -->
+                                <div class="form-col col-md-12 my-col one-col">
+                                    <div class="form-field">
+                                        <input type="text" class="text-input"id="sadditive" name="sadditive" placeholder="ZUSATZ (OPTIONAL)">
+                                        <span class="input-clear-button"></span>
+                                    </div>
+                                </div>
+                                <!-- col -->
+                                <!-- col -->
+                                <div class="form-col col-md-6 my-col two-col">
+                                    <div class="form-field">
+                                        <input type="text" class="text-input" id="splz" name="splz" placeholder="PLZ">
+                                        <span class="input-clear-button"></span>
+                                    </div>
+                                </div>
+                                <!-- col -->
+                                <!-- col -->
+                                <div class="form-col col-md-6 my-col two-col">
+                                    <div class="form-field">
+                                        <input type="text" class="text-input" id="sort" name="sort" placeholder="ORT">
+                                        <span class="input-clear-button"></span>
+                                    </div>
+                                </div>
+                                <!-- col -->
+                                <!-- col -->
+                                <div class="form-col col-md-6 my-col two-col">
+                                    <div class="form-field">
+                                        <div class="field select-field outlined dark">
+                                            <select id="sland" name="sland">
+                                              
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- col -->
+                                <div class="clear"></div>
+                                <!-- col -->
+                                <div class="form-col col-md-12 my-col one-col">
+                                    <div class="form-field">
+                                       <button class="site-button color-red covered" id="regbutton" name="submit"><span>JETZT REGISTRIEREN</span></button>
+                                    </div>
+                                </div>
+                                <!-- col -->
+                            <!-- form row -->  
+                            </div>
+                        </div>
+                        <!-- registration form module -->
+                    </div>
+                </form>
+            </div>
+            <!-- login box -->
+            <!-- module header -->
+            <div class="block-section element element-gap-tiny clearfix">
+               <div class="module-header pull-text-center clearfix">
+                    <h4><span>Bereits registriert? Bitte anmelden</span></h4>
+                </div>
+            </div>
+            <!-- module header -->
+            <div class="element pull-text-center"><a href="/anmeldung/" class="site-button"><span>Anmeldung</span></a></div> 
+        </div>
+    </div>
+    <!-- Scrollable page content-->
+</div>
+</template>
+
+<script>
+
+import $$ from 'dom7';
+import localforage from "localforage";
+import MtmApi from '../js/mtm-api.js';
+import MtmregistrierenContent from '../js/content/mtm-registrieren.js';
+export default {
+    on: {
+        pageAfterIn: function(e, page) {
+            this.$f7ready((f7) => {
+              MtmApi.apiUrl().done(function(config){
+                  MtmregistrierenContent.contentPageAfterIn(f7,config);
+              });
+            });
+        },
+    },
+}
+
+</script>

@@ -1,0 +1,273 @@
+.mt{
+
+	footer.footer{
+
+
+		.footer-members-part{
+			padding: 70px 0;
+			background-color: $site-dark-color-type-two;
+
+			.main-wrap{
+				display: flex;
+				align-items: center;
+				margin-left: -45px;
+				margin-right: -45px;
+
+				& > div{
+					flex-grow: 1;
+					padding: 0 45px;
+
+					&.premium, &.semi-premium{
+						img{
+							display: block;
+							margin-bottom: 20px;
+						}
+					}
+
+					&.premium{
+						img{
+							max-width: 290px;
+							height: auto;
+						}
+					}
+
+					&.semi-premium{
+						img{
+							max-width: 272px;
+							height: auto;
+						}
+					}
+
+					&.ordinary-member{
+						img{
+							max-width: 200px;
+							height: auto;
+							display: inline-block;
+							vertical-align: middle;
+							margin-right: 60px;
+							margin-bottom: 10px;
+						}
+					}
+				}
+			}
+		}
+
+
+
+
+		.footer-primary-part{
+			margin-top: 12px;
+			padding: 70px 0;
+			background-color: $site-dark-color-type-two; 
+		}
+
+
+
+		.social-follow{
+				min-height: 196px;
+				position: relative;
+			.title{
+				display: inline-block;
+				transform: rotate(-90deg);
+				transform-origin: center center;
+				font-size: 35px;
+				position: absolute;
+				left: -80px;
+				top: 74px;
+			}
+
+			.social-items{
+				padding-left: 70px;
+				& > div{
+					margin-top: 40px;
+
+					&:first-child{
+						margin-top: 0px;
+					}
+				}
+
+				a{
+					display: inline-block;
+				}
+			}
+			
+		}
+
+
+		.footer-menu-block{
+			.title{
+				font-size: 35px;
+				text-transform: uppercase;
+				margin-bottom: 20px;
+			}
+
+			ul{
+				list-style: none;
+				margin: 0px;
+				padding: 0px;
+
+				li{
+					margin: 10px 0 0 0;
+					padding: 0px;
+					font-size: 20px;
+					font-family: $site-third-font;
+					font-weight: $site-third-font-regular;
+
+					&:first-child{
+						margin-top: 0px;
+					}
+				}
+			}
+		}
+
+
+		.footer-logo{
+			font-size: 124px;
+			line-height: 121px;
+			color: #ffffff;
+			letter-spacing: 6.2px;
+			font-family: $primary-font-outline;
+
+			span{
+				display: inline-block;
+				margin-top: 140px;
+
+				i{
+					font-style: normal;
+					display: block;
+					padding-left: 60px;
+				}
+			}
+		}
+
+
+		.footer-copyright-part{
+			padding: 50px 0 110px 0;
+			background-color: $site-dark-color;
+			position: relative;	
+
+			span{
+				display: inline-block;
+				font-size: 20px;
+				font-family: $site-third-font;
+				font-weight: $site-third-font-regular;
+			}
+		}
+
+
+		.go-top{
+			position: absolute;
+			right: 80px;
+			top: -40px;
+			cursor: pointer;
+			width: 91px;
+			height: 78px;
+			background-image: url(../static/images/go-top.svg);
+			background-repeat: no-repeat;
+			background-position: left top;
+		}
+	
+
+	}
+
+
+
+
+	.app-custom-switching-tab{
+		position: fixed;
+		height: 60px;
+		width: 100%;
+		left: 0px;
+		bottom: 0px;
+		margin: 0px;
+		padding: 0px;
+		box-sizing: border-box;
+
+
+		&:after, &:before{
+			display: none;
+		}
+
+
+		.toolbar-inner{
+			padding: 0px;
+			margin: 0px;
+			border: none;
+			height: 60px;
+			background-color: #fff;
+			position: static;
+			display: flex;
+			align-items: center;
+			overflow: visible;
+
+			span{
+					display: none;
+				}
+
+			& > a{
+				flex-grow: 1;
+				text-align: center;
+				margin: 0px;
+				padding: 0px 7px;
+				display: inherit;
+				justify-content: center;
+				position: relative;
+				overflow: visible;
+				height: 60px;
+
+				&:after{
+					position: absolute;
+					width: 100%;
+					pointer-events: none;
+					left: 0px;
+					top: -13px;
+					background-repeat: no-repeat;
+					background-position: center top;
+					background-size: cover;
+					height: 14px;
+					background-image: url(../static/images/active-curve.svg);
+					visibility: hidden;
+					content: ' ';
+					display: block;
+					
+				}
+
+				&:before{
+					display: none;
+				}
+
+				img{
+					
+				}
+				
+				.normal-img{
+					display: inline-block;
+				}
+
+				.active-img{
+					display: none;
+				}
+
+				&.active{
+					
+					&:after{
+						visibility: visible;
+					}
+
+					.normal-img{
+						display: none;
+					}
+
+					.active-img{
+						display: inline-block;
+					}
+				}
+			}
+
+			& *{
+				color: #000;
+			}
+		}
+	}
+	
+}

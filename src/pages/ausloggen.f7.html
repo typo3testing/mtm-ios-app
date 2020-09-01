@@ -1,0 +1,43 @@
+<template>
+  <div class="page has-no-top-banner" data-name="ausloggen">
+    {{> 'subpageHeader'}}
+
+    <!-- Page content-->
+    <div class="page-content page-bottom-gap-type-one">
+      <div class="block-section centered-container clearfix">
+        <div class="container-fluid clearfix">
+                      
+          <!-- module header -->
+          <div class="element element-gap-Lessnormal block-section clearfix">
+            <div class="module-header pull-text-left danger clearfix">
+              <h2><span>Ausloggen</span></h2>
+            </div>
+          </div>
+
+          <div class="entry clearfix">
+            <h2>Hallo,<br>
+              <span id="user-firstname"></span> <span id="user-lastname"></span>
+            </h2>
+            <a class="site-button logout-button"><span>abmelden</span></button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+import $$ from 'dom7';
+import localforage from "localforage";
+import MtmAusloggenContent from '../js/content/mtm-ausloggen.js';
+export default {
+	on: {
+    pageInit: function(e, page) {
+      this.$f7ready((f7) => {
+      	MtmAusloggenContent.contentPageInit(f7);
+      });
+    },
+  },
+};
+</script>

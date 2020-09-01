@@ -1,0 +1,134 @@
+<template>
+  <div class="page has-no-top-banner" data-name="kalender">
+    {{> 'subpageHeader'}}
+
+    <!-- Scrollable page content-->
+      <div class="page-content page-bottom-gap-type-one">
+         <!-- kader module -->
+         <div class="element element-gap-Exlarger block-section centered-container clearfix">
+            <div class="container-fluid">
+               <!-- module -->
+               <div class="kader-module clearfix">
+                  <!-- tab link -->
+                  <div class="link-tab-varient var-1 clearfix element element-gap-normal">
+                    <div class="info-tab-link-carousel general-carousel element element-gap-Lessnormal">
+                       <div class="owl-carousel clearfix">
+                          <div class="item">
+                             <a href="/social/" class="tab-link">
+                                <div>
+                                   <span>News</span>
+                                </div>
+                             </a>
+                          </div> 
+                          <div class="item">
+                             <a href="/kalender/" class="tab-link tab-link-active">
+                                <div>
+                                   <span>Kalender</span>
+                                </div>
+                             </a>
+                          </div>
+                          <div class="item">
+                             <a href="/youtubelist/" class="tab-link">
+                                <div>
+                                   <span>Videos</span>
+                                </div>
+                             </a>
+                          </div>
+                       </div>
+                    </div>
+                  </div>
+                  <!-- tab link -->
+                  
+
+                   <div class="info-tab-body-wrap clearfix">
+
+                    <div class="info-tab-body tabs clearfix">
+
+
+                      <!-- Tab 1, active by default -->
+                          <div id="kalender" class="tab tab-active">
+                              <div class="content-block">
+                                    
+                                    <!-- termin list module -->
+                                    <div class="termine-list-module clearfix">
+
+                                        <!-- filter -->
+                                        <div class="termine-filter element element-gap-Lessnormal">
+                                          <div class="site-form type-one clearfix">
+                                            <!-- form row -->
+                                            <div class="row form-row clearfix">
+                                              <!-- col -->
+                                              <div  class="form-col col-xs-3 my-col one-col"></div>
+                                              <div  class="form-col col-xs-6 my-col one-col">
+                                                  <div class="form-field">
+                                                      <div class="field select-field outlined">
+                                                          <select id="kalender_months">
+                                                          </select>
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                              <div  class="form-col col-xs-3 my-col one-col"></div>
+                                              <!-- col -->
+                                            </div>
+                                            <!-- form row -->
+                                          </div>
+                                        </div>
+                                        <!-- filter -->
+
+                                        <!-- module header -->
+                                        <div class="element element-gap-Biggertiny block-section clearfix">
+                                            <div class="module-header pull-text-center light clearfix">
+                                                <h4><span>Nächste Termine</span></h4>
+                                            </div>
+                                        </div>
+                                    <!-- module header -->
+
+                                    <!-- main list -->
+                                    <div class="the-termin-list-group infinite-scroll-content" id="kalender-list">
+ 
+                                    </div>
+                                    <!-- main list -->
+                                      <div class="preloader infinite-scroll-preloader hidden"></div>
+                                    
+                                    </div>
+                                    <!-- termin list module -->
+
+                              </div>
+                          </div>    
+                        <!-- Tab 1, active by default -->
+
+
+                    </div>
+                  </div>  
+
+
+               </div>
+               <!-- module -->
+
+            </div>
+         </div>
+         <!-- kader module -->
+      </div>
+      <!-- Scrollable page content-->
+  </div>
+</template>
+
+
+
+<script>
+import $$ from 'dom7';
+import localforage from "localforage";
+import MtmApi from '../js/mtm-api.js';
+import MtmKalenderContent from '../js/content/mtm-kalender.js';
+export default {
+    on: {
+        pageMounted: function(e, page) {
+            this.$f7ready((f7) => {
+              MtmApi.apiUrl().done(function(config){
+                  MtmKalenderContent.contentPageMounted(f7,config);
+              });
+            });
+        },
+    },
+}
+</script>

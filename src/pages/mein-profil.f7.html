@@ -1,0 +1,55 @@
+<template>
+  <div class="page has-no-top-banner" data-name="mein-profil">
+    {{> 'subpageHeader'}}
+
+     <!-- Scrollable page content-->
+      <div class="page-content page-bottom-gap-type-one">
+        <!-- anmelden module  -->
+             <div class="block-section centered-container clearfix">
+                <div class="container-fluid clearfix">
+                    
+                      
+                     <!-- module header -->
+                         <div class="element element-gap-Lessnormal block-section clearfix">
+                            <div class="module-header pull-text-center light clearfix">
+                                 <h2>Hallo,</br> <h id="userfname"></h> <h id="userlname"></h>
+
+                                  <span>ProfilÜbersicht</span></h2>
+                             </div>
+                        </div>
+                    <!-- module header -->
+                         <div class="anmelden-module clearfix" id="uberchit">
+
+                         </div>
+
+
+
+               
+
+
+
+                </div>
+            </div>
+           <!-- anmelden module  -->
+      </div>
+      <!-- Scrollable page content-->
+  </div>
+</template>
+
+<script>
+import $$ from 'dom7';
+import localforage from "localforage";
+import MtmApi from '../js/mtm-api.js';
+import Mtmmeinprofilcontent from '../js/content/mtm-meinprofil.js';
+export default {
+    on: {
+        pageAfterIn: function(e, page) {
+            this.$f7ready((f7) => {
+              MtmApi.apiUrl().done(function(config){
+                  Mtmmeinprofilcontent.contentPageAfterIn(f7,config);
+              });
+            });
+        },
+    },
+}
+</script>

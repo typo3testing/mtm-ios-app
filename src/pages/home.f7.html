@@ -1,0 +1,26 @@
+<template>
+  <div class="page has-top-banner" data-name="home">
+    {{> 'homeHeader'}}
+
+    <!-- Page content-->
+    <div class="page-content page-bottom-gap-type-one" id="homepage-content"></div>
+
+  </div>
+</template>
+<script>
+import $$ from 'dom7';
+import localforage from "localforage";
+import MtmApi from '../js/mtm-api.js';
+import MtmHomeContent from '../js/content/mtm-home.js';
+export default {
+    on: {
+        pageInit: function(e, page) {
+            this.$f7ready((f7) => {
+              MtmApi.apiUrl().done(function(config){
+                  MtmHomeContent.contentInit(f7,config);
+              });
+            });
+        },
+    },
+}
+</script>

@@ -1,0 +1,162 @@
+<template>
+  <div class="page has-no-top-banner" data-name="social">
+    {{> 'subpageHeader'}}
+
+    <!-- Scrollable page content-->
+      <div class="page-content page-bottom-gap-type-one">
+         <!-- kader module -->
+         <div class="element element-gap-Exlarger block-section centered-container clearfix">
+            <div class="container-fluid">
+               <!-- module -->
+               <div class="kader-module clearfix">
+                  <!-- tab link -->
+                  <div class="link-tab-varient var-1 clearfix element element-gap-normal">
+                    <div class="info-tab-link-carousel general-carousel element element-gap-Lessnormal">
+                       <div class="owl-carousel clearfix">
+                          <div class="item">
+                             <a href="/social/" class="tab-link tab-link-active">
+                                <div>
+                                   <span>News</span>
+                                </div>
+                             </a>
+                          </div> 
+                          <div class="item">
+                             <a href="/kalender/" class="tab-link">
+                                <div>
+                                   <span>Kalender</span>
+                                </div>
+                             </a>
+                          </div>
+                          <div class="item">
+                             <a href="/youtubelist/" class="tab-link">
+                                <div>
+                                   <span>Videos</span>
+                                </div>
+                             </a>
+                          </div>
+                       </div>
+                    </div>
+                  </div>
+                  <!-- tab link -->
+                  <!-- info-tab-body -->
+                  <div class="info-tab-body-wrap clearfix" >
+
+                     <div class="info-tab-body tabs clearfix">
+
+                         <!-- Tab 1, active by default -->
+                          <div id="news" class="tab tab-active">
+                              <div class="content-block">
+                                 <!-- news listing module -->
+                                      <div class="news-listing-module clearfix">
+
+                                          
+
+                                          <!-- filter -->
+                                          <div class="news-list-filter element element-gap-normal">
+
+                                              
+                                              <!-- row -->
+                                              <div class="filter-button-row">
+                                                  <div class="row">
+
+                                                      <div class="col-xs-6 my-col pull-text-left no-top-margin">
+                                                          <div class="custom-inputText-block">
+                                                              <input type="text" readonly="readonly" class="news-list-datepicker" id="news-list-datepicker">
+                                                              <a class="site-button with-calender" href="#">ZEITRAUM</a>
+                                                          </div>
+                                                      </div>
+
+                                                      <div class="col-xs-6 my-col pull-text-right no-top-margin">
+                                                          <div class="filter-search-filed">
+                                                              <div class="menu-item-dropdown">
+                                                                  <div class="search-dropdown-trigger dropdown-toggle" id="filter-news-type-search" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                                                      <a class="site-button with-search" href="#">SUCHEN</a>
+                                                                   </div>
+
+                                                                   <div class="menu-dropdown menu-dropdown-right">
+                                                                   <div class="form-group">
+                                                                      <input type="text" class="form-control" placeholder="Search" id="search_text">
+                                                                  </div>
+                                                                  <div class="form-group no-bottom-margin">
+                                                                  <a class="site-button danger" id="search_submit"><span>Submit</span></a>
+                                                                   </div>
+                                                                  </div> 
+                                                               </div>   
+                                                          </div>
+                                                      </div>
+
+                                                  </div>
+                                              </div>
+                                              <!-- row -->
+
+                                               <!-- row -->
+                                              <div class="filter-button-row">
+                                                  <div class="row">
+                                                      <div class="col-md-12 my-col pull-text-center no-top-margin">
+                                                         <div class="news-tags" id="social-category">
+                                                        
+                                                         </div>
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                              <!-- row -->
+
+
+                                          </div>
+                                          <!-- filter -->
+                                              
+
+                                          <!-- listing -->
+                                          <div class="the-listing element element-gap-normal clearfix ">
+                                              <div class="row clearfix" id="social">
+                                              </div>
+                                          </div>
+                                          <!-- listing -->
+
+                                          <!-- alllink -->
+                                          <div class="module-all-link pull-text-center"><a class="site-button with-down-arrow" href="#" id="news-mehr-laden"><span>MEHR LADEN</span></a></div>
+                                          <!-- alllink -->
+
+
+                                      </div>
+                        <!-- news listing module -->
+                               </div>
+                          </div>
+                         <!-- Tab 1, active by default -->
+
+                     </div>
+
+
+
+                  </div>
+                  <!-- info-tab-body -->
+               </div>
+               <!-- module -->
+
+            </div>
+         </div>
+         <!-- kader module -->
+      </div>
+      <!-- Scrollable page content-->
+  </div>
+</template>
+
+
+
+<script>
+import $$ from 'dom7';
+import localforage from "localforage";
+import MtmApi from '../js/mtm-api.js';
+import MtmNewsContent from '../js/content/mtm-social.js';
+export default {
+    on: {
+        pageMounted: function(e, page) {
+            this.$f7ready((f7) => {
+              MtmApi.apiUrl().done(function(config){
+                  MtmNewsContent.contentPageMounted(f7,config);
+              });
+            });
+        },
+    },
+}
+</script>

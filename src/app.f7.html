@@ -1,0 +1,213 @@
+
+<template>
+  <div id="app">
+
+    <!-- Views/Tabs container -->
+    <div class="views tabs safe-areas app-custom-safe-area">
+
+      <!-- custom overlay -->
+      <div class="app-custom-overlay begining-view-overlay animated hidden">
+        <div class="table-wrap"><div class="table-cell middle-line">
+          <div class="main-overlay-wrap dark clearfix">
+                
+            <div class="close-overlay"></div>
+
+            <div class="element element-gap-Lgnormal block-section clearfix">
+              <div class="app-product-teaser-module type-one clearfix">
+
+                <div class="element element-gap-Biggertiny block-section clearfix">
+                    <div class="module-header pull-text-center light clearfix">
+                        <h1>SPIELTAGS<span>ANGEBOT</span></h1>
+                    </div>
+                </div>
+          
+                <div class="main-wrap clearfix">
+                  <div class="product-img-caption-part element element-gap-medium">
+                    <div class="product-caption">
+                      <span class="focused danger">15% RABATT</span>
+                      <span>IM MT FANSHOP</span>
+                    </div>
+                    <div class="img-holder"><img src="static/images/app-shop-teaser-img.png"></div>
+                  </div>
+
+                  <div class="element pull-text-center">
+                    <a class="site-button with-arrow" href="/shop/" data-force="true"><span>ZUM SHOP</span></a>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div></div>
+      </div>
+      <!-- custom overlay -->
+
+
+      <!-- my app tab link bar -->
+      <div class="toolbar toolbar-bottom tabbar-labels app-custom-switching-tab">
+        <div class="toolbar-inner">
+           <a href="/shop/" class="link shop" data-force="true">
+            <img src="static/images/shop-tab-link-dark.svg" class="normal-img" width="30">
+            <img src="static/images/shop-tab-link-danger.svg" class="active-img" width="30">
+          </a>
+          <a href="/tickets/" class="link tickets" data-force="true">
+            <img src="static/images/tickets-dark.svg" class="normal-img" width="30">
+            <img src="static/images/tickets-danger.svg" class="active-img" width="30">
+          </a>
+          <a href="/fans/" class="link fans" data-force="true">
+            <img src="static/images/star-tab-link-dark.svg" class="normal-img" width="25">
+            <img src="static/images/star-tab-link-danger.svg" class="active-img" width="25">
+          </a>
+          <a href="/matchcenter/" class="link matchcenter" data-force="true">
+            <img src="static/images/ground-tab-link-dark.svg" class="normal-img" width="33">
+            <img src="static/images/ground-tab-link-danger.svg" class="active-img" width="33">
+          </a>
+          <a href="/social/" class="link social" data-force="true">
+            <img src="static/images/two-hand-man-dark.svg" class="normal-img" width="30">
+            <img src="static/images/two-hand-man-danger.svg" class="active-img" width="30">
+          </a>
+        </div>
+      </div>
+
+      <!-- Your main view/tab, should have "view-main" class. It also has "tab-active" class -->
+      <div id="view-app-start-page" class="view view-main view-init tab tab-active custom-view-main" data-url="/">
+        <!-- Home page will be loaded here dynamically from / route -->
+      </div>
+    </div>
+
+  </div>
+</template>
+<script>
+  import $$ from 'dom7';
+  import localforage from "localforage";
+  import MtmUtility from './js/utility/mtm-utility.js';
+
+  export default {
+
+    // custom global start
+    on: {
+
+      pageAfterIn: function(e, page) {
+          this.$f7ready((f7) => {
+            // toolbar active
+            jQuery('.custom-view-main .page.page-current').each(function(){
+              var CURRENTPAGEDATANAME =  jQuery(this).attr('data-name');
+              if(CURRENTPAGEDATANAME == 'statistiken' || CURRENTPAGEDATANAME == 'spielplaene' || CURRENTPAGEDATANAME == 'kader'){
+                CURRENTPAGEDATANAME = 'matchcenter';
+              };
+              if(CURRENTPAGEDATANAME == 'productdetails'){
+                CURRENTPAGEDATANAME = 'shop';
+              };
+              if(CURRENTPAGEDATANAME == 'kalender' || CURRENTPAGEDATANAME == 'youtubelist' || CURRENTPAGEDATANAME == 'allvideo' || CURRENTPAGEDATANAME == 'youtubedetails' || CURRENTPAGEDATANAME == 'news-detail'){
+                CURRENTPAGEDATANAME = 'social';
+              };
+              jQuery('.app-custom-switching-tab a').removeClass('active');
+              jQuery('.app-custom-switching-tab').find('.' + CURRENTPAGEDATANAME).addClass('active');
+            });
+
+            localforage.getItem('user-logedin', function(err, value) {
+                if (value) {
+                  $$('.user-menu li').removeClass('hidden');
+                  $$('.user-menu .login').addClass('hidden');
+                } else {
+                  //console.log(err);
+                };
+            });
+
+          localforage.getItem('user_cart_no', function(err, cart_no) {
+              var cart_count = 0;
+              if(cart_no!==null){
+                cart_count = cart_no;
+              }
+              jQuery('.cart_no').html(cart_count);
+          });
+
+          localforage.getItem('user_cart_key', function(err, cart_key) {
+           if(cart_key === null){
+              localforage.setItem('user_cart_key', MtmUtility.random(12));
+           }
+         //  console.log(cart_key);
+          });
+
+
+          });
+      },
+
+      pageMounted: function(e, page) {
+        this.$f7ready((f7) => {
+          // set back start
+          jQuery('.set-back').each(function(){
+            var SETBACK = jQuery(this).find('img').attr('src');
+            jQuery(this).css('background-image', 'url(' + SETBACK + ')');
+          });
+
+          // Menu
+          jQuery('.main-menu').on('click', function(e){
+            e.preventDefault();   
+            e.stopImmediatePropagation();
+            jQuery(this).parents('.page').find('.app-mega-menu').show();
+            jQuery(this).parents('.page').find('.app-mega-menu').toggleClass('slideInRight');
+            jQuery(this).parents('.page').find('.app-mega-menu').toggleClass('slideOutRight');
+            jQuery(this).parents('.page').find('header.header').toggleClass('app-menu-open');
+            jQuery(this).parents('.page').find('.menu-hamberg').toggleClass('active');
+          });
+
+          // custom overlay
+          var appOverlay = localforage.createInstance({
+            name: "overlay"
+          });
+          appOverlay.getItem('isClicked', function(err, value) {
+            if (value) {
+              if(value == 'yes'){
+                jQuery('.begining-view-overlay').remove();
+              }
+            } else {
+              console.log(err)
+              jQuery('.begining-view-overlay').removeClass('hidden');
+              jQuery('.begining-view-overlay').parents('.app-custom-safe-area').addClass('has-beging-overlay');
+            }
+          });
+
+          jQuery('.begining-view-overlay a, .close-overlay').click(function(){
+            appOverlay.setItem('isClicked', 'yes');
+            var self = this;
+            jQuery(this).parents('.app-custom-overlay').removeClass('begining-view-overlay');
+            jQuery(this).parents('.app-custom-overlay').addClass('fadeOut');
+            jQuery(this).parents('.app-custom-safe-area').removeClass('has-beging-overlay');
+            setTimeout(function() {
+              jQuery(self).parents('.app-custom-overlay').remove();
+            }, 1000);
+          });
+
+          jQuery('.trigger-initiate-back-link').click(function(){
+            jQuery('.general-component-back-link').addClass('active');
+            jQuery('.page-hidden-logo').addClass('inactive');
+          });
+
+          jQuery(document).on( "click", ".general-component-back-link", function(event) {
+            jQuery('.general-component-back-link').removeClass('active');
+            jQuery('.page-hidden-logo').removeClass('inactive');  
+          });
+
+          localforage.getItem('user_cart_no', function(err, cart_no) {
+              var cart_count = 0;
+              if(cart_no!==null){
+                cart_count = cart_no;
+              }
+              jQuery('.cart_no').html(cart_count);
+          });
+          localforage.getItem('user_cart_key', function(err, cart_key) {
+           if(cart_key === null){
+              localforage.setItem('user_cart_key', MtmUtility.random(12));
+           }
+          // console.log(cart_key);
+          });
+
+
+        });
+      },
+  },
+}
+  // custom global end
+</script>

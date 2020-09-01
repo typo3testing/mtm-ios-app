@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>571872653359-grf2mot2pt4gtlk2brtac49e3s3p3mn4.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.571872653359-grf2mot2pt4gtlk2brtac49e3s3p3mn4</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAg0I_2RR9bRpwLOjCsysDJ1MqAkKHb9ow</string>
+	<key>GCM_SENDER_ID</key>
+	<string>571872653359</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>io.framework7.mtmelsungen</string>
+	<key>PROJECT_ID</key>
+	<string>mt-melsungen-1678c</string>
+	<key>STORAGE_BUCKET</key>
+	<string>mt-melsungen-1678c.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:571872653359:ios:e9848e431d07e63e2716da</string>
+	<key>DATABASE_URL</key>
+	<string>https://mt-melsungen-1678c.firebaseio.com</string>
+</dict>
+</plist>

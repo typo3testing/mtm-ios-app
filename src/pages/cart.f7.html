@@ -1,0 +1,28 @@
+<template>
+  <div class="page" data-name="cart">
+    {{> 'subpageHeader'}}
+
+    <!-- Page content-->
+    <div class="page-content" id="cart">
+      
+    </div>
+  </div>
+</template>
+
+<script>
+import $$ from 'dom7';
+import localforage from "localforage";
+import MtmApi from '../js/mtm-api.js';
+import MtmCartContent from '../js/content/mtm-cart.js';  
+export default {
+	on: {
+        pageInit: function(e, page) {
+            this.$f7ready((f7) => {
+              MtmApi.apiUrl().done(function(config){
+                  MtmCartContent.contentPageInit(f7,config);
+              });
+            });
+        },
+    },
+};
+</script>

@@ -1,0 +1,49 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-keyboard": {
+      "PACKAGE_NAME": "io.framework7.mtmelsungen"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "io.framework7.mtmelsungen"
+    },
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "io.framework7.mtmelsungen"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "io.framework7.mtmelsungen"
+    },
+    "cordova-plugin-wkwebview-engine": {
+      "PACKAGE_NAME": "io.framework7.mtmelsungen"
+    },
+    "cordova-plugin-wkwebview-file-xhr": {
+      "PACKAGE_NAME": "io.framework7.mtmelsungen"
+    },
+    "cordova-plugin-firebase-lib": {
+      "PACKAGE_NAME": "io.framework7.mtmelsungen"
+    },
+    "cordova-plugin-androidx": {
+      "PACKAGE_NAME": "io.framework7.mtmelsungen"
+    },
+    "cordova-plugin-androidx-adapter": {
+      "PACKAGE_NAME": "io.framework7.mtmelsungen"
+    },
+    "cordova-plugin-inappbrowser": {
+      "PACKAGE_NAME": "io.framework7.mtmelsungen"
+    },
+    "cordova-plugin-customurlscheme": {
+      "URL_SCHEME": "mtmelsungen",
+      "ANDROID_SCHEME": " ",
+      "ANDROID_HOST": " ",
+      "ANDROID_PATHPREFIX": "/",
+      "PACKAGE_NAME": "io.framework7.mtmelsungen"
+    }
+  },
+  "dependent_plugins": {}
+}

@@ -1,0 +1,25 @@
+<template>
+<div class="page has-no-top-banner">
+  {{> 'backHeader'}}
+  <div class="page-content page-bottom-gap-type-one">
+    <div class="block-section centered-container clearfix">
+      <div class="container-fluid clearfix">
+      <div class="entry clearfix">
+        <h2>Seite nicht gefunden</h2>
+        <p>Woops...!<br>Entschuldigung, wir können nicht finden, wonach Sie suchen</p>
+        <p><a class="site-button" href="/" data-force="true" data-ignore-cache="true"><span>GO TO HOME</span></a></p>
+      </div>
+    </div>
+  </div>
+</div>
+</template>
+<script>
+export default {
+  on: {
+        pageInit: function(e, page) {
+            this.$f7ready((f7) => {
+           });
+        },
+    },
+};
+</script>

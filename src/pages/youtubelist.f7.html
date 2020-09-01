@@ -1,0 +1,80 @@
+<template>
+  <div class="page has-no-top-banner" data-name="youtubelist">
+    {{> 'subpageHeader'}}
+
+    <!-- Page content-->
+    <div class="page-content page-bottom-gap-type-one">
+      <div class="element element-gap-Exlarger block-section centered-container clearfix">
+            <div class="container-fluid">
+               <!-- module -->
+               <div class="kader-module clearfix">
+                  <!-- tab link -->
+                  <div class="link-tab-varient var-1 clearfix element element-gap-normal">
+                    <div class="info-tab-link-carousel general-carousel element element-gap-Lessnormal">
+                       <div class="owl-carousel clearfix">
+                         
+                          <div class="item">
+                             <a href="/social/" class="tab-link">
+                                <div>
+                                   <span>NEWS</span>
+                                </div>
+                             </a>
+                          </div>
+                           <div class="item">
+                             <a href="/kalender/" class="tab-link">
+                                <div>
+                                   <span>KALENDER</span>
+                                </div>
+                             </a>
+                          </div>
+                           <div class="item">
+                             <a href="#video-tab" class="tab-link tab-link-active">
+                                <div>
+                                   <span>Videos</span>
+                                </div>
+                             </a>
+                          </div>
+                       </div>
+                    </div>
+                  </div>
+                  <!-- tab link -->
+
+                  <!-- info-tab-body -->
+                  <div class="info-tab-body-wrap clearfix">
+
+                    <div class="info-tab-body tabs clearfix" id="youtubelistdata">
+
+
+                    </div>
+                  </div>
+                  <!-- info-tab-body -->
+
+               </div>
+               <!-- module -->
+            </div>
+         </div>
+
+
+
+       </div>
+
+  </div>
+</template>
+
+<script>
+import $$ from 'dom7';
+import localforage from "localforage";
+import MtmApi from '../js/mtm-api.js';
+import MtmYoutubelistContent from '../js/content/mtm-youtubelist.js';
+export default {
+    on: {
+        pageAfterIn: function(e, page) {
+            this.$f7ready((f7) => {
+              MtmApi.apiUrl().done(function(config){
+                  MtmYoutubelistContent.contentPageAfterIn(f7,config);
+              });
+            });
+        },
+    },
+}
+</script>

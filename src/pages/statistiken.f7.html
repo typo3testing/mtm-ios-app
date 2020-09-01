@@ -1,0 +1,25 @@
+<template>
+  <div class="page has-no-top-banner" data-name="statistiken">
+    {{> 'subpageHeader'}}
+
+    <div class="page-content page-bottom-gap-type-one" id="statistiken"></div>
+    
+  </div>
+</template>
+<script>
+import $$ from 'dom7';
+import localforage from "localforage";
+import MtmApi from '../js/mtm-api.js';
+import MtmStatistikenContent from '../js/content/mtm-statistiken.js';
+export default {
+    on: {
+        pageAfterIn: function(e, page) {
+            this.$f7ready((f7) => {
+              MtmApi.apiUrl().done(function(config){
+                  MtmStatistikenContent.contentPageAfterIn(f7,config);
+              });
+            });
+        },
+    },
+}
+</script>
